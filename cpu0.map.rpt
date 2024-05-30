@@ -1,6 +1,6 @@
 Analysis & Synthesis report for cpu0
-Thu May 30 15:14:48 2024
-Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version
+Thu May 30 23:40:51 2024
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 
 
 ---------------------
@@ -10,7 +10,15 @@ Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Analysis & Synthesis Source Files Read
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |cpu0|timer:inst28|state
+  8. User-Specified and Inferred Latches
+  9. Logic Cells Representing Combinational Loops
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: asynram:inst3
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -36,11 +44,16 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu May 30 15:14:48 2024        ;
-; Quartus II 64-Bit Version   ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Analysis & Synthesis Status ; Successful - Thu May 30 23:40:51 2024    ;
+; Quartus II Version          ; 9.0 Build 132 02/25/2009 SJ Full Version ;
 ; Revision Name               ; cpu0                                     ;
 ; Top-level Entity Name       ; cpu0                                     ;
 ; Family                      ; Cyclone                                  ;
+; Total logic elements        ; 1,177                                    ;
+; Total pins                  ; 19                                       ;
+; Total virtual pins          ; 0                                        ;
+; Total memory bits           ; 0                                        ;
+; Total PLLs                  ; 0                                        ;
 +-----------------------------+------------------------------------------+
 
 
@@ -118,38 +131,315 @@ applicable agreement for further details.
 +----------------------------------------------------------------+--------------------+--------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                   ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+
-; asynram.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/asynram.vhd    ;
-; regfile.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/regfile.vhd    ;
-; cpu0.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/cpu0.bdf       ;
-; alu.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/alu.vhd        ;
-; ar.vhd                           ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/ar.vhd         ;
-; bus_mux.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/bus_mux.vhd    ;
-; controller.vhd                   ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/controller.vhd ;
-; flag_reg.vhd                     ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/flag_reg.vhd   ;
-; ir.vhd                           ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/ir.vhd         ;
-; pc.vhd                           ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/pc.vhd         ;
-; reg.vhd                          ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/reg.vhd        ;
-; reg_out.vhd                      ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/reg_out.vhd    ;
-; t1.vhd                           ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/t1.vhd         ;
-; t2.vhd                           ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/t2.vhd         ;
-; t3.vhd                           ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/t3.vhd         ;
-; timer.vhd                        ; yes             ; User VHDL File                     ; C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/timer.vhd      ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------+
+; mux_4_to_1.vhd                   ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/mux_4_to_1.vhd     ;
+; decoder_2_to_4.vhd               ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/decoder_2_to_4.vhd ;
+; asynram.vhd                      ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/asynram.vhd        ;
+; regfile.vhd                      ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/regfile.vhd        ;
+; cpu0.bdf                         ; yes             ; User Block Diagram/Schematic File  ; D:/下载/CPU8bit-main/CPU8bit-main/cpu0.bdf           ;
+; alu.vhd                          ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/alu.vhd            ;
+; ar.vhd                           ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/ar.vhd             ;
+; bus_mux.vhd                      ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/bus_mux.vhd        ;
+; controller.vhd                   ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/controller.vhd     ;
+; flag_reg.vhd                     ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/flag_reg.vhd       ;
+; ir.vhd                           ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/ir.vhd             ;
+; pc.vhd                           ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/pc.vhd             ;
+; reg.vhd                          ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/reg.vhd            ;
+; reg_out.vhd                      ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/reg_out.vhd        ;
+; reg_testa.vhd                    ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/reg_testa.vhd      ;
+; t1.vhd                           ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/t1.vhd             ;
+; t2.vhd                           ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/t2.vhd             ;
+; t3.vhd                           ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/t3.vhd             ;
+; timer.vhd                        ; yes             ; User VHDL File                     ; D:/下载/CPU8bit-main/CPU8bit-main/timer.vhd          ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Total logic elements                        ; 1177           ;
+;     -- Combinational with no register       ; 1104           ;
+;     -- Register only                        ; 58             ;
+;     -- Combinational with a register        ; 15             ;
+;                                             ;                ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 555            ;
+;     -- 3 input functions                    ; 548            ;
+;     -- 2 input functions                    ; 15             ;
+;     -- 1 input functions                    ; 0              ;
+;     -- 0 input functions                    ; 1              ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 1177           ;
+;     -- arithmetic mode                      ; 0              ;
+;     -- qfbk mode                            ; 0              ;
+;     -- register cascade mode                ; 0              ;
+;     -- synchronous clear/load mode          ; 7              ;
+;     -- asynchronous clear/load mode         ; 73             ;
+;                                             ;                ;
+; Total registers                             ; 73             ;
+; I/O pins                                    ; 19             ;
+; Maximum fan-out node                        ; ar:inst19|q[4] ;
+; Maximum fan-out                             ; 150            ;
+; Total fan-out                               ; 4183           ;
+; Average fan-out                             ; 3.50           ;
++---------------------------------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
++------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                            ; Library Name ;
++------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------+--------------+
+; |cpu0                              ; 1177 (333)  ; 73           ; 0           ; 19   ; 0            ; 1104 (333)   ; 58 (0)            ; 15 (0)           ; 0 (0)           ; 0 (0)      ; |cpu0                                          ; work         ;
+;    |alu:inst|                      ; 36 (18)     ; 0            ; 0           ; 0    ; 0            ; 36 (18)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst                                 ; work         ;
+;       |adder8bit:f_add|            ; 18 (2)      ; 0            ; 0           ; 0    ; 0            ; 18 (2)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst|adder8bit:f_add                 ; work         ;
+;          |fa:\f1_7:1:fm|           ; 2 (2)       ; 0            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst|adder8bit:f_add|fa:\f1_7:1:fm   ; work         ;
+;          |fa:\f1_7:2:fm|           ; 2 (2)       ; 0            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst|adder8bit:f_add|fa:\f1_7:2:fm   ; work         ;
+;          |fa:\f1_7:3:fm|           ; 2 (2)       ; 0            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst|adder8bit:f_add|fa:\f1_7:3:fm   ; work         ;
+;          |fa:\f1_7:4:fm|           ; 2 (2)       ; 0            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst|adder8bit:f_add|fa:\f1_7:4:fm   ; work         ;
+;          |fa:\f1_7:5:fm|           ; 2 (2)       ; 0            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst|adder8bit:f_add|fa:\f1_7:5:fm   ; work         ;
+;          |fa:\f1_7:6:fm|           ; 2 (2)       ; 0            ; 0           ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst|adder8bit:f_add|fa:\f1_7:6:fm   ; work         ;
+;          |fa:\f1_7:7:fm|           ; 3 (3)       ; 0            ; 0           ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst|adder8bit:f_add|fa:\f1_7:7:fm   ; work         ;
+;          |fa:f0|                   ; 1 (1)       ; 0            ; 0           ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|alu:inst|adder8bit:f_add|fa:f0           ; work         ;
+;    |ar:inst19|                     ; 7 (7)       ; 7            ; 0           ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 7 (7)            ; 0 (0)           ; 0 (0)      ; |cpu0|ar:inst19                                ; work         ;
+;    |asynram:inst3|                 ; 540 (540)   ; 0            ; 0           ; 0    ; 0            ; 540 (540)    ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|asynram:inst3                            ; work         ;
+;    |bus_mux:inst15|                ; 60 (60)     ; 0            ; 0           ; 0    ; 0            ; 60 (60)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|bus_mux:inst15                           ; work         ;
+;    |controller:inst9|              ; 67 (67)     ; 0            ; 0           ; 0    ; 0            ; 67 (67)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|controller:inst9                         ; work         ;
+;    |flag_reg:inst2|                ; 4 (4)       ; 4            ; 0           ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |cpu0|flag_reg:inst2                           ; work         ;
+;    |ir:inst25|                     ; 9 (9)       ; 8            ; 0           ; 0    ; 0            ; 1 (1)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|ir:inst25                                ; work         ;
+;    |pc:inst18|                     ; 8 (8)       ; 8            ; 0           ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|pc:inst18                                ; work         ;
+;    |reg_out:inst6|                 ; 60 (60)     ; 0            ; 0           ; 0    ; 0            ; 60 (60)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|reg_out:inst6                            ; work         ;
+;    |reg_testa:inst8|               ; 8 (8)       ; 8            ; 0           ; 0    ; 0            ; 0 (0)        ; 7 (7)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |cpu0|reg_testa:inst8                          ; work         ;
+;    |regfile:inst4|                 ; 36 (0)      ; 32           ; 0           ; 0    ; 0            ; 4 (0)        ; 32 (0)            ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|regfile:inst4                            ; work         ;
+;       |decoder_2_to_4:des_decoder| ; 3 (3)       ; 0            ; 0           ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|regfile:inst4|decoder_2_to_4:des_decoder ; work         ;
+;       |reg:Areg00|                 ; 9 (9)       ; 8            ; 0           ; 0    ; 0            ; 1 (1)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|regfile:inst4|reg:Areg00                 ; work         ;
+;       |reg:Areg01|                 ; 8 (8)       ; 8            ; 0           ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|regfile:inst4|reg:Areg01                 ; work         ;
+;       |reg:Areg02|                 ; 8 (8)       ; 8            ; 0           ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|regfile:inst4|reg:Areg02                 ; work         ;
+;       |reg:Areg03|                 ; 8 (8)       ; 8            ; 0           ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |cpu0|regfile:inst4|reg:Areg03                 ; work         ;
+;    |timer:inst28|                  ; 9 (9)       ; 6            ; 0           ; 0    ; 0            ; 3 (3)        ; 2 (2)             ; 4 (4)            ; 0 (0)           ; 0 (0)      ; |cpu0|timer:inst28                             ; work         ;
++------------------------------------+-------------+--------------+-------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------+
+; State Machine - |cpu0|timer:inst28|state                                   ;
++----------+----------+----------+----------+----------+----------+----------+
+; Name     ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1 ; state.s0 ;
++----------+----------+----------+----------+----------+----------+----------+
+; state.s0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.s1 ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.s2 ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.s3 ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.s4 ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.s5 ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++------------------------------------------------------+-----------------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal         ; Free of Timing Hazards ;
++------------------------------------------------------+-----------------------------+------------------------+
+; controller:inst9|wr                                  ; controller:inst9|Mux17      ; yes                    ;
+; controller:inst9|alu_in_sel[1]                       ; controller:inst9|Mux31      ; yes                    ;
+; controller:inst9|alu_in_sel[2]                       ; controller:inst9|Mux34      ; yes                    ;
+; controller:inst9|dest_reg[0]                         ; controller:inst9|Mux54      ; yes                    ;
+; controller:inst9|dest_reg[1]                         ; controller:inst9|Mux54      ; yes                    ;
+; controller:inst9|alu_func[1]                         ; controller:inst9|Mux38      ; yes                    ;
+; controller:inst9|alu_func[0]                         ; controller:inst9|Mux38      ; yes                    ;
+; controller:inst9|alu_func[2]                         ; controller:inst9|Mux38      ; yes                    ;
+; controller:inst9|alu_in_sel[0]                       ; controller:inst9|Mux31      ; yes                    ;
+; controller:inst9|sour_reg[0]                         ; controller:inst9|Mux54      ; yes                    ;
+; controller:inst9|sour_reg[1]                         ; controller:inst9|Mux54      ; yes                    ;
+; controller:inst9|sst[1]                              ; controller:inst9|Mux38      ; yes                    ;
+; controller:inst9|sst[0]                              ; controller:inst9|Mux38      ; yes                    ;
+; controller:inst9|rec[1]                              ; controller:inst9|Mux15      ; yes                    ;
+; controller:inst9|rec[0]                              ; controller:inst9|Mux15      ; yes                    ;
+; controller:inst9|sci[1]                              ; controller:inst9|Mux48      ; yes                    ;
+; controller:inst9|sci[0]                              ; controller:inst9|Mux48      ; yes                    ;
+; asynram:inst3|ram[49][1]                             ; asynram:inst3|ram[49][7]~15 ; yes                    ;
+; asynram:inst3|ram[50][1]                             ; asynram:inst3|ram[50][7]~14 ; yes                    ;
+; asynram:inst3|ram[48][1]                             ; asynram:inst3|ram[48][7]~16 ; yes                    ;
+; asynram:inst3|ram[51][1]                             ; asynram:inst3|ram[51][7]~13 ; yes                    ;
+; asynram:inst3|ram[21][1]                             ; asynram:inst3|ram[21][7]~43 ; yes                    ;
+; asynram:inst3|ram[22][1]                             ; asynram:inst3|ram[22][7]~42 ; yes                    ;
+; asynram:inst3|ram[20][1]                             ; asynram:inst3|ram[20][7]~44 ; yes                    ;
+; asynram:inst3|ram[23][1]                             ; asynram:inst3|ram[23][7]~41 ; yes                    ;
+; asynram:inst3|ram[17][1]                             ; asynram:inst3|ram[17][7]~47 ; yes                    ;
+; asynram:inst3|ram[18][1]                             ; asynram:inst3|ram[18][7]~46 ; yes                    ;
+; asynram:inst3|ram[16][1]                             ; asynram:inst3|ram[16][7]~48 ; yes                    ;
+; asynram:inst3|ram[19][1]                             ; asynram:inst3|ram[19][7]~45 ; yes                    ;
+; asynram:inst3|ram[53][1]                             ; asynram:inst3|ram[53][7]~11 ; yes                    ;
+; asynram:inst3|ram[54][1]                             ; asynram:inst3|ram[54][7]~10 ; yes                    ;
+; asynram:inst3|ram[52][1]                             ; asynram:inst3|ram[52][7]~12 ; yes                    ;
+; asynram:inst3|ram[55][1]                             ; asynram:inst3|ram[55][7]~9  ; yes                    ;
+; asynram:inst3|ram[37][1]                             ; asynram:inst3|ram[37][7]~27 ; yes                    ;
+; asynram:inst3|ram[35][1]                             ; asynram:inst3|ram[35][7]~29 ; yes                    ;
+; asynram:inst3|ram[33][1]                             ; asynram:inst3|ram[33][7]~31 ; yes                    ;
+; asynram:inst3|ram[39][1]                             ; asynram:inst3|ram[39][7]~25 ; yes                    ;
+; asynram:inst3|ram[64][1]                             ; asynram:inst3|ram[64][6]~0  ; yes                    ;
+; asynram:inst3|ram[7][1]                              ; asynram:inst3|ram[7][7]~57  ; yes                    ;
+; asynram:inst3|ram[34][1]                             ; asynram:inst3|ram[34][7]~30 ; yes                    ;
+; asynram:inst3|ram[36][1]                             ; asynram:inst3|ram[36][7]~28 ; yes                    ;
+; asynram:inst3|ram[32][1]                             ; asynram:inst3|ram[32][7]~32 ; yes                    ;
+; asynram:inst3|ram[38][1]                             ; asynram:inst3|ram[38][7]~26 ; yes                    ;
+; asynram:inst3|ram[28][1]                             ; asynram:inst3|ram[28][7]~36 ; yes                    ;
+; asynram:inst3|ram[26][1]                             ; asynram:inst3|ram[26][7]~38 ; yes                    ;
+; asynram:inst3|ram[24][1]                             ; asynram:inst3|ram[24][7]~40 ; yes                    ;
+; asynram:inst3|ram[30][1]                             ; asynram:inst3|ram[30][7]~34 ; yes                    ;
+; asynram:inst3|ram[44][1]                             ; asynram:inst3|ram[44][7]~20 ; yes                    ;
+; asynram:inst3|ram[42][1]                             ; asynram:inst3|ram[42][7]~22 ; yes                    ;
+; asynram:inst3|ram[40][1]                             ; asynram:inst3|ram[40][7]~24 ; yes                    ;
+; asynram:inst3|ram[46][1]                             ; asynram:inst3|ram[46][7]~18 ; yes                    ;
+; asynram:inst3|ram[12][1]                             ; asynram:inst3|ram[12][7]~52 ; yes                    ;
+; asynram:inst3|ram[10][1]                             ; asynram:inst3|ram[10][7]~54 ; yes                    ;
+; asynram:inst3|ram[8][1]                              ; asynram:inst3|ram[8][7]~56  ; yes                    ;
+; asynram:inst3|ram[14][1]                             ; asynram:inst3|ram[14][7]~50 ; yes                    ;
+; asynram:inst3|ram[58][1]                             ; asynram:inst3|ram[58][7]~6  ; yes                    ;
+; asynram:inst3|ram[60][1]                             ; asynram:inst3|ram[60][7]~4  ; yes                    ;
+; asynram:inst3|ram[56][1]                             ; asynram:inst3|ram[56][7]~8  ; yes                    ;
+; asynram:inst3|ram[62][1]                             ; asynram:inst3|ram[62][7]~2  ; yes                    ;
+; asynram:inst3|ram[27][1]                             ; asynram:inst3|ram[27][7]~37 ; yes                    ;
+; asynram:inst3|ram[29][1]                             ; asynram:inst3|ram[29][7]~35 ; yes                    ;
+; asynram:inst3|ram[25][1]                             ; asynram:inst3|ram[25][7]~39 ; yes                    ;
+; asynram:inst3|ram[31][1]                             ; asynram:inst3|ram[31][7]~33 ; yes                    ;
+; asynram:inst3|ram[45][1]                             ; asynram:inst3|ram[45][7]~19 ; yes                    ;
+; asynram:inst3|ram[43][1]                             ; asynram:inst3|ram[43][7]~21 ; yes                    ;
+; asynram:inst3|ram[41][1]                             ; asynram:inst3|ram[41][7]~23 ; yes                    ;
+; asynram:inst3|ram[47][1]                             ; asynram:inst3|ram[47][7]~17 ; yes                    ;
+; asynram:inst3|ram[13][1]                             ; asynram:inst3|ram[13][7]~51 ; yes                    ;
+; asynram:inst3|ram[11][1]                             ; asynram:inst3|ram[11][7]~53 ; yes                    ;
+; asynram:inst3|ram[9][1]                              ; asynram:inst3|ram[9][7]~55  ; yes                    ;
+; asynram:inst3|ram[15][1]                             ; asynram:inst3|ram[15][7]~49 ; yes                    ;
+; asynram:inst3|ram[59][1]                             ; asynram:inst3|ram[59][7]~5  ; yes                    ;
+; asynram:inst3|ram[61][1]                             ; asynram:inst3|ram[61][7]~3  ; yes                    ;
+; asynram:inst3|ram[57][1]                             ; asynram:inst3|ram[57][7]~7  ; yes                    ;
+; asynram:inst3|ram[63][1]                             ; asynram:inst3|ram[63][7]~1  ; yes                    ;
+; asynram:inst3|ram[37][2]                             ; asynram:inst3|ram[37][7]~27 ; yes                    ;
+; asynram:inst3|ram[35][2]                             ; asynram:inst3|ram[35][7]~29 ; yes                    ;
+; asynram:inst3|ram[33][2]                             ; asynram:inst3|ram[33][7]~31 ; yes                    ;
+; asynram:inst3|ram[39][2]                             ; asynram:inst3|ram[39][7]~25 ; yes                    ;
+; asynram:inst3|ram[49][2]                             ; asynram:inst3|ram[49][7]~15 ; yes                    ;
+; asynram:inst3|ram[52][2]                             ; asynram:inst3|ram[52][7]~12 ; yes                    ;
+; asynram:inst3|ram[48][2]                             ; asynram:inst3|ram[48][7]~16 ; yes                    ;
+; asynram:inst3|ram[53][2]                             ; asynram:inst3|ram[53][7]~11 ; yes                    ;
+; asynram:inst3|ram[19][2]                             ; asynram:inst3|ram[19][7]~45 ; yes                    ;
+; asynram:inst3|ram[22][2]                             ; asynram:inst3|ram[22][7]~42 ; yes                    ;
+; asynram:inst3|ram[18][2]                             ; asynram:inst3|ram[18][7]~46 ; yes                    ;
+; asynram:inst3|ram[23][2]                             ; asynram:inst3|ram[23][7]~41 ; yes                    ;
+; asynram:inst3|ram[17][2]                             ; asynram:inst3|ram[17][7]~47 ; yes                    ;
+; asynram:inst3|ram[20][2]                             ; asynram:inst3|ram[20][7]~44 ; yes                    ;
+; asynram:inst3|ram[16][2]                             ; asynram:inst3|ram[16][7]~48 ; yes                    ;
+; asynram:inst3|ram[21][2]                             ; asynram:inst3|ram[21][7]~43 ; yes                    ;
+; asynram:inst3|ram[51][2]                             ; asynram:inst3|ram[51][7]~13 ; yes                    ;
+; asynram:inst3|ram[54][2]                             ; asynram:inst3|ram[54][7]~10 ; yes                    ;
+; asynram:inst3|ram[50][2]                             ; asynram:inst3|ram[50][7]~14 ; yes                    ;
+; asynram:inst3|ram[55][2]                             ; asynram:inst3|ram[55][7]~9  ; yes                    ;
+; asynram:inst3|ram[64][2]                             ; asynram:inst3|ram[64][6]~0  ; yes                    ;
+; asynram:inst3|ram[7][2]                              ; asynram:inst3|ram[7][7]~57  ; yes                    ;
+; asynram:inst3|ram[34][2]                             ; asynram:inst3|ram[34][7]~30 ; yes                    ;
+; asynram:inst3|ram[36][2]                             ; asynram:inst3|ram[36][7]~28 ; yes                    ;
+; asynram:inst3|ram[32][2]                             ; asynram:inst3|ram[32][7]~32 ; yes                    ;
+; Number of user-specified and inferred latches = 481  ;                             ;                        ;
++------------------------------------------------------+-----------------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; bus_mux:inst15|Mux8~0                                  ;    ;
+; alu:inst|b_in[6]~16                                    ;    ;
+; alu:inst|b_in[5]~17                                    ;    ;
+; alu:inst|b_in[4]~18                                    ;    ;
+; alu:inst|b_in[3]~19                                    ;    ;
+; alu:inst|b_in[2]~20                                    ;    ;
+; alu:inst|b_in[1]~21                                    ;    ;
+; alu:inst|b_in[0]~22                                    ;    ;
+; gdfx_temp0[6]~1                                        ;    ;
+; gdfx_temp0[5]~2                                        ;    ;
+; gdfx_temp0[4]~3                                        ;    ;
+; gdfx_temp0[3]~4                                        ;    ;
+; gdfx_temp0[2]~5                                        ;    ;
+; gdfx_temp0[1]~6                                        ;    ;
+; gdfx_temp0[0]~7                                        ;    ;
+; gdfx_temp0[7]~0                                        ;    ;
+; controller:inst9|en_reg                                ;    ;
+; controller:inst9|en_pc                                 ;    ;
+; Number of logic cells representing combinational loops ; 18 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 73    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 7     ;
+; Number of registers using Asynchronous Clear ; 73    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 58    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |cpu0|ar:inst19|q[6]         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cpu0|controller:inst9|Mux33 ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |cpu0|alu:inst|Mux2          ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |cpu0|bus_mux:inst15|Mux1    ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |cpu0|alu:inst|b_in[7]       ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |cpu0|controller:inst9|Mux49 ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |cpu0|controller:inst9|Mux55 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |cpu0|bus_mux:inst15|Mux7    ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |cpu0|bus_mux:inst15|Mux13   ;
+; 14:1               ; 8 bits    ; 72 LEs        ; 64 LEs               ; 8 LEs                  ; No         ; |cpu0|reg_out:inst6|Mux25    ;
+; 80:1               ; 8 bits    ; 424 LEs       ; 352 LEs              ; 72 LEs                 ; No         ; |cpu0|gdfx_temp0[5]          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: asynram:inst3 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; ram_width      ; 8     ; Signed Integer                    ;
+; adr_width      ; 8     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
-    Info: Processing started: Thu May 30 15:14:46 2024
+    Info: Processing started: Thu May 30 23:40:48 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpu0 -c cpu0
+Info: Found 2 design units, including 1 entities, in source file mux_4_to_1.vhd
+    Info: Found design unit 1: mux_4_to_1-behavioral
+    Info: Found entity 1: mux_4_to_1
+Info: Found 2 design units, including 1 entities, in source file decoder_2_to_4.vhd
+    Info: Found design unit 1: decoder_2_to_4-behavioral
+    Info: Found entity 1: decoder_2_to_4
 Info: Found 2 design units, including 1 entities, in source file asynram.vhd
     Info: Found design unit 1: asynram-rtl
     Info: Found entity 1: asynram
@@ -214,7 +504,7 @@ Info: Found 2 design units, including 1 entities, in source file timer.vhd
     Info: Found design unit 1: timer-behave
     Info: Found entity 1: timer
 Info: Elaborating entity "cpu0" for the top level hierarchy
-Info: Elaborating entity "controller" for hierarchy "controller:inst7"
+Info: Elaborating entity "controller" for hierarchy "controller:inst9"
 Warning (10036): Verilog HDL or VHDL warning at controller.vhd(18): object "temp2" assigned a value but never read
 Warning (10631): VHDL Process Statement warning at controller.vhd(17): inferring latch(es) for signal or variable "dest_reg", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at controller.vhd(17): inferring latch(es) for signal or variable "sour_reg", which holds its previous value in one or more paths through the process
@@ -731,19 +1021,76 @@ Info (10041): Inferred latch for "ram[7][1]" at asynram.vhd(20)
 Info (10041): Inferred latch for "ram[7][0]" at asynram.vhd(20)
 Info: Elaborating entity "ar" for hierarchy "ar:inst19"
 Info: Elaborating entity "pc" for hierarchy "pc:inst18"
-Info: Elaborating entity "regfile" for hierarchy "regfile:inst12"
-Info: Elaborating entity "reg" for hierarchy "regfile:inst12|reg:Areg00"
-Info: Elaborating entity "t2" for hierarchy "t2:inst17"
+Info: Elaborating entity "regfile" for hierarchy "regfile:inst4"
+Info: Elaborating entity "reg" for hierarchy "regfile:inst4|reg:Areg00"
+Info: Elaborating entity "decoder_2_to_4" for hierarchy "regfile:inst4|decoder_2_to_4:des_decoder"
+Info: Elaborating entity "mux_4_to_1" for hierarchy "regfile:inst4|mux_4_to_1:muxA"
+Info: Elaborating entity "t2" for hierarchy "t2:inst5"
 Info: Elaborating entity "ir" for hierarchy "ir:inst25"
 Info: Elaborating entity "timer" for hierarchy "timer:inst28"
 Info: Elaborating entity "reg_out" for hierarchy "reg_out:inst6"
 Warning (10036): Verilog HDL or VHDL warning at reg_out.vhd(18): object "temp" assigned a value but never read
-Error (10344): VHDL expression error at reg_out.vhd(20): expression has 4 elements, but must have 6 elements File: C:/Users/Fine/Desktop/大二下/计组/综合性实验/CPU-1/cpu1/CPU8bit/reg_out.vhd Line: 20
-Error: Can't elaborate user hierarchy "reg_out:inst6"
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 30 warnings
-    Error: Peak virtual memory: 4453 megabytes
-    Error: Processing ended: Thu May 30 15:14:48 2024
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:01
+Warning (10631): VHDL Process Statement warning at reg_out.vhd(17): inferring latch(es) for signal or variable "reg_data1", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "reg_data1[0]" at reg_out.vhd(17)
+Info (10041): Inferred latch for "reg_data1[1]" at reg_out.vhd(17)
+Info (10041): Inferred latch for "reg_data1[2]" at reg_out.vhd(17)
+Info (10041): Inferred latch for "reg_data1[3]" at reg_out.vhd(17)
+Info (10041): Inferred latch for "reg_data1[4]" at reg_out.vhd(17)
+Info (10041): Inferred latch for "reg_data1[5]" at reg_out.vhd(17)
+Info (10041): Inferred latch for "reg_data1[6]" at reg_out.vhd(17)
+Info (10041): Inferred latch for "reg_data1[7]" at reg_out.vhd(17)
+Info: Elaborating entity "reg_testa" for hierarchy "reg_testa:inst8"
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted tri-state node "gdfx_temp0[7]" into a selector
+    Warning: Converted tri-state node "gdfx_temp0[6]" into a selector
+    Warning: Converted tri-state node "gdfx_temp0[5]" into a selector
+    Warning: Converted tri-state node "gdfx_temp0[4]" into a selector
+    Warning: Converted tri-state node "gdfx_temp0[3]" into a selector
+    Warning: Converted tri-state node "gdfx_temp0[2]" into a selector
+    Warning: Converted tri-state node "gdfx_temp0[1]" into a selector
+    Warning: Converted tri-state node "gdfx_temp0[0]" into a selector
+Info: Duplicate LATCH primitives merged into single LATCH primitive
+    Info: Duplicate LATCH primitive "controller:inst9|sst[0]" merged with LATCH primitive "controller:inst9|sst[1]"
+Warning: Latch controller:inst9|wr has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|WideOr1
+Warning: Latch controller:inst9|alu_in_sel[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|output~1
+Warning: Latch controller:inst9|alu_in_sel[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|output~1
+Warning: Latch controller:inst9|dest_reg[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|output~1
+Warning: Latch controller:inst9|dest_reg[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|output~1
+Warning: Latch controller:inst9|alu_func[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|WideOr1
+Warning: Latch controller:inst9|alu_func[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|WideOr1
+Warning: Latch controller:inst9|alu_func[2] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ir:inst25|q[7]
+Warning: Latch controller:inst9|alu_in_sel[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ir:inst25|q[5]
+Warning: Latch controller:inst9|sour_reg[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|output~1
+Warning: Latch controller:inst9|sour_reg[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|output~1
+Warning: Latch controller:inst9|sst[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|WideOr1
+Warning: Latch controller:inst9|rec[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|WideOr1
+Warning: Latch controller:inst9|rec[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|output~1
+Warning: Latch controller:inst9|sci[1] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal ir:inst25|q[7]
+Warning: Latch controller:inst9|sci[0] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal timer:inst28|WideOr1
+Info: Implemented 1196 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 13 output pins
+    Info: Implemented 1177 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 64 warnings
+    Info: Peak virtual memory: 255 megabytes
+    Info: Processing ended: Thu May 30 23:40:51 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

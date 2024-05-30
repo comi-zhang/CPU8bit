@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu May 23 14:47:14 2024
-Quartus II 64-Bit Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Fitter Status : Successful - Thu May 30 23:41:01 2024
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
 Revision Name : cpu0
 Top-level Entity Name : cpu0
 Family : Cyclone
 Device : EP1C12Q240C8
 Timing Models : Final
-Total logic elements : 998 / 12,060 ( 8 % )
-Total pins : 61 / 173 ( 35 % )
+Total logic elements : 1,120 / 12,060 ( 9 % )
+Total pins : 19 / 173 ( 11 % )
 Total virtual pins : 0
 Total memory bits : 0 / 239,616 ( 0 % )
 Total PLLs : 0 / 2 ( 0 % )

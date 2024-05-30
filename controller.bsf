@@ -82,8 +82,8 @@ applicable agreement for further details.
 	(port
 		(pt 208 64)
 		(output)
-		(text "offset[7..0]" (rect 0 0 56 12)(font "Arial" ))
-		(text "offset[7..0]" (rect 131 59 187 71)(font "Arial" ))
+		(text "offset[3..0]" (rect 0 0 56 12)(font "Arial" ))
+		(text "offset[3..0]" (rect 131 59 187 71)(font "Arial" ))
 		(line (pt 208 64)(pt 192 64)(line_width 3))
 	)
 	(port
