@@ -86,6 +86,8 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
 set_global_assignment -name MISC_FILE "F:/组成原理2022/计算机组原理实验/综合性实验/综合性实验参考材料（新）/参考材料/cpu/cpu0.dpf"
 set_global_assignment -name MISC_FILE "C:/Users/Linsiri/Desktop/2024春/计算机组成/综合实验/cpu1/cpu0.dpf"
 set_location_assignment PIN_14 -to write
+set_global_assignment -name VHDL_FILE mux_4_to_1.vhd
+set_global_assignment -name VHDL_FILE decoder_2_to_4.vhd
 set_global_assignment -name VHDL_FILE asynram.vhd
 set_global_assignment -name VHDL_FILE regfile.vhd
 set_global_assignment -name BDF_FILE cpu0.bdf

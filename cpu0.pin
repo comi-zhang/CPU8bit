@@ -63,7 +63,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 64-Bit Version 9.0 Build 132 02/25/2009 SJ Full Version
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
 CHIP  "cpu0"  ASSIGNED TO AN: EP1C12Q240C8
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -81,8 +81,8 @@ GND                          : 10        : gnd    :                   :         
 GND*                         : 11        :        :                   :         : 1         :                
 reg_sel[0]                   : 12        : input  : 3.3-V LVTTL       :         : 1         : Y              
 reg_sel[1]                   : 13        : input  : 3.3-V LVTTL       :         : 1         : Y              
-reg_sel[2]                   : 14        : input  : 3.3-V LVTTL       :         : 1         : Y              
-reg_sel[3]                   : 15        : input  : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 14        :        :                   :         : 1         :                
+GND*                         : 15        :        :                   :         : 1         :                
 sel[0]                       : 16        : input  : 3.3-V LVTTL       :         : 1         : Y              
 sel[1]                       : 17        : input  : 3.3-V LVTTL       :         : 1         : Y              
 GND*                         : 18        :        :                   :         : 1         :                
@@ -108,14 +108,14 @@ DCLK                         : 36        : bidir  :                   :         
 GND*                         : 38        :        :                   :         : 1         :                
 GND*                         : 39        :        :                   :         : 1         :                
 GND                          : 40        : gnd    :                   :         :           :                
-address_bus[0]               : 41        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[1]               : 42        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[2]               : 43        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[3]               : 44        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[4]               : 45        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[5]               : 46        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[6]               : 47        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[7]               : 48        : output : 3.3-V LVTTL       :         : 1         : Y              
+GND*                         : 41        :        :                   :         : 1         :                
+GND*                         : 42        :        :                   :         : 1         :                
+GND*                         : 43        :        :                   :         : 1         :                
+GND*                         : 44        :        :                   :         : 1         :                
+GND*                         : 45        :        :                   :         : 1         :                
+GND*                         : 46        :        :                   :         : 1         :                
+GND*                         : 47        :        :                   :         : 1         :                
+GND*                         : 48        :        :                   :         : 1         :                
 GND*                         : 49        :        :                   :         : 1         :                
 GND*                         : 50        :        :                   :         : 1         :                
 VCCIO1                       : 51        : power  :                   : 3.3V    : 1         :                
@@ -124,14 +124,14 @@ GND*                         : 53        :        :                   :         
 GND*                         : 54        :        :                   :         : 1         :                
 GND*                         : 55        :        :                   :         : 1         :                
 GND*                         : 56        :        :                   :         : 1         :                
-address_bus[8]               : 57        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[9]               : 58        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[10]              : 59        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[11]              : 60        : output : 3.3-V LVTTL       :         : 1         : Y              
-address_bus[12]              : 61        : output : 3.3-V LVTTL       :         : 4         : Y              
-address_bus[13]              : 62        : output : 3.3-V LVTTL       :         : 4         : Y              
-address_bus[14]              : 63        : output : 3.3-V LVTTL       :         : 4         : Y              
-address_bus[15]              : 64        : output : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 57        :        :                   :         : 1         :                
+GND*                         : 58        :        :                   :         : 1         :                
+GND*                         : 59        :        :                   :         : 1         :                
+GND*                         : 60        :        :                   :         : 1         :                
+GND*                         : 61        :        :                   :         : 4         :                
+GND*                         : 62        :        :                   :         : 4         :                
+GND*                         : 63        :        :                   :         : 4         :                
+GND*                         : 64        :        :                   :         : 4         :                
 GND*                         : 65        :        :                   :         : 4         :                
 GND*                         : 66        :        :                   :         : 4         :                
 GND*                         : 67        :        :                   :         : 4         :                
@@ -240,15 +240,15 @@ GND*                         : 169       :        :                   :         
 GND*                         : 170       :        :                   :         : 3         :                
 GND                          : 171       : gnd    :                   :         :           :                
 VCCIO3                       : 172       : power  :                   : 3.3V    : 3         :                
-reg_data[8]                  : 173       : output : 3.3-V LVTTL       :         : 3         : Y              
-reg_data[9]                  : 174       : output : 3.3-V LVTTL       :         : 3         : Y              
-reg_data[10]                 : 175       : output : 3.3-V LVTTL       :         : 3         : Y              
+GND*                         : 173       :        :                   :         : 3         :                
+GND*                         : 174       :        :                   :         : 3         :                
+GND*                         : 175       :        :                   :         : 3         :                
 GND*                         : 176       :        :                   :         : 3         :                
-reg_data[11]                 : 177       : output : 3.3-V LVTTL       :         : 3         : Y              
-reg_data[12]                 : 178       : output : 3.3-V LVTTL       :         : 3         : Y              
-reg_data[13]                 : 179       : output : 3.3-V LVTTL       :         : 3         : Y              
-reg_data[14]                 : 180       : output : 3.3-V LVTTL       :         : 3         : Y              
-reg_data[15]                 : 181       : output : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : 177       :        :                   :         : 3         :                
+GND*                         : 178       :        :                   :         : 3         :                
+GND*                         : 179       :        :                   :         : 3         :                
+GND*                         : 180       :        :                   :         : 3         :                
+GND*                         : 181       :        :                   :         : 2         :                
 GND*                         : 182       :        :                   :         : 2         :                
 GND*                         : 183       :        :                   :         : 2         :                
 GND*                         : 184       :        :                   :         : 2         :                
@@ -267,10 +267,10 @@ GND*                         : 196       :        :                   :         
 GND*                         : 197       :        :                   :         : 2         :                
 VCCINT                       : 198       : power  :                   : 1.5V    :           :                
 GND                          : 199       : gnd    :                   :         :           :                
-data_bus[0]                  : 200       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[1]                  : 201       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[2]                  : 202       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[3]                  : 203       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : 200       :        :                   :         : 2         :                
+GND*                         : 201       :        :                   :         : 2         :                
+GND*                         : 202       :        :                   :         : 2         :                
+GND*                         : 203       :        :                   :         : 2         :                
 VCCINT                       : 204       : power  :                   : 1.5V    :           :                
 GND                          : 205       : gnd    :                   :         :           :                
 GND*                         : 206       :        :                   :         : 2         :                
@@ -281,19 +281,19 @@ GND                          : 210       : gnd    :                   :         
 VCCINT                       : 211       : power  :                   : 1.5V    :           :                
 GND                          : 212       : gnd    :                   :         :           :                
 GND*                         : 213       :        :                   :         : 2         :                
-data_bus[4]                  : 214       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[5]                  : 215       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[6]                  : 216       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[7]                  : 217       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : 214       :        :                   :         : 2         :                
+GND*                         : 215       :        :                   :         : 2         :                
+GND*                         : 216       :        :                   :         : 2         :                
+GND*                         : 217       :        :                   :         : 2         :                
 GND*                         : 218       :        :                   :         : 2         :                
 GND*                         : 219       :        :                   :         : 2         :                
 VCCINT                       : 220       : power  :                   : 1.5V    :           :                
 GND                          : 221       : gnd    :                   :         :           :                
 GND*                         : 222       :        :                   :         : 2         :                
-data_bus[8]                  : 223       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[9]                  : 224       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[10]                 : 225       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[11]                 : 226       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : 223       :        :                   :         : 2         :                
+GND*                         : 224       :        :                   :         : 2         :                
+GND*                         : 225       :        :                   :         : 2         :                
+GND*                         : 226       :        :                   :         : 2         :                
 GND*                         : 227       :        :                   :         : 2         :                
 GND*                         : 228       :        :                   :         : 2         :                
 VCCINT                       : 229       : power  :                   : 1.5V    :           :                
@@ -301,10 +301,10 @@ GND                          : 230       : gnd    :                   :         
 VCCIO2                       : 231       : power  :                   : 3.3V    : 2         :                
 GND                          : 232       : gnd    :                   :         :           :                
 GND*                         : 233       :        :                   :         : 2         :                
-data_bus[12]                 : 234       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[13]                 : 235       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[14]                 : 236       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
-data_bus[15]                 : 237       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : 234       :        :                   :         : 2         :                
+GND*                         : 235       :        :                   :         : 2         :                
+GND*                         : 236       :        :                   :         : 2         :                
+GND*                         : 237       :        :                   :         : 2         :                
 GND*                         : 238       :        :                   :         : 2         :                
 GND*                         : 239       :        :                   :         : 2         :                
 reset                        : 240       : input  : 3.3-V LVTTL       :         : 2         : Y              
