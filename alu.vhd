@@ -1,0 +1,127 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+
+-- ALU Entity Declaration
+entity alu is
+    port(
+        cin: in std_logic;  -- 进位输入
+        alu_a, alu_b: in std_logic_vector(7 downto 0);  -- ALU的两个输入
+        alu_func: in std_logic_vector(2 downto 0);  -- ALU的功能选择信号
+        alu_out: out std_logic_vector(7 downto 0);  -- ALU的输出
+        c, z, v, s: out std_logic  -- 进位、零标志、溢出标志、符号标志输出
+    );
+end alu;
+
+-- ALU Architecture
+architecture behavioral of alu is
+    signal a_in, b_in: std_logic_vector(7 downto 0);
+    signal c_in: std_logic;
+    signal result_add8: std_logic_vector(7 downto 0);
+    signal flow_temp, co_flag: std_logic;
+
+    component adder8bit is
+        port(
+            a, b: in std_logic_vector(7 downto 0);
+            s: out std_logic_vector(7 downto 0);
+            ci: in std_logic;
+            c7, zero, overflow, negative: out std_logic
+        );
+    end component;
+
+begin
+    a_in <= alu_a;
+    b_in <= not alu_b when alu_func = "001" else
+            "00000001" when alu_func = "010" else
+            "11111110" when alu_func = "011" else
+            alu_b;
+
+    c_in <= '1' when alu_func = "001" else
+            '1' when alu_func = "011" else
+            '0';
+
+    f_add: adder8bit port map(
+        a => a_in,
+        b => b_in,
+        s => result_add8,
+        ci => c_in,
+        c7 => c,
+        zero => z,
+        overflow => v,
+        negative => s
+    );
+
+    process(alu_func)
+        variable f_temp: std_logic_vector(7 downto 0);
+    begin
+        case alu_func is
+            when "000" =>
+                f_temp := a_in and b_in;
+            when "001" =>
+                f_temp := a_in or b_in;
+            when "010" =>
+                f_temp := not a_in;
+            when "011" =>
+                f_temp := a_in xor b_in;
+            when others =>
+                f_temp := result_add8;
+        end case;
+
+        alu_out <= f_temp;
+    end process;
+end behavioral;
+
+library ieee;
+use ieee.std_logic_1164.all;
+-- Adder8bit Entity Declaration
+entity adder8bit is
+    port(
+        a, b: in std_logic_vector(7 downto 0);
+        s: out std_logic_vector(7 downto 0);
+        ci: in std_logic;
+        c7, zero, overflow, negative: out std_logic
+    );
+end adder8bit;
+
+-- Adder8bit Architecture
+architecture structure of adder8bit is
+    component fa is
+        port(
+            a, b, ci: in std_logic;
+            s, co: out std_logic
+        );
+    end component;
+
+    signal s_temp, c: std_logic_vector(7 downto 0);
+    signal overflow_temp: std_logic;
+begin
+    f0: fa port map(a => a(0), b => b(0), ci => ci, s => s_temp(0), co => c(0));
+    f1_7: for i in 1 to 7 generate
+        fm: fa port map(a => a(i), b => b(i), ci => c(i-1), s => s_temp(i), co => c(i));
+    end generate f1_7;
+
+    s <= s_temp;
+    c7 <= c(7);
+    zero <= '1' when s_temp = "00000000" else '0';
+    overflow_temp <= c(7) xor c(6);
+    overflow <= '1' when overflow_temp = '1' else '0';
+    negative <= '1' when s_temp(7) = '1' else '0';
+end structure;
+
+library ieee;
+use ieee.std_logic_1164.all;
+-- FA Entity Declaration
+entity fa is
+    port(
+        a, b, ci: in std_logic;
+        s, co: out std_logic
+    );
+end fa;
+
+-- FA Architecture
+architecture b_fa of fa is
+begin
+    s <= a xor b xor ci;
+    co <= ((a xor b) and ci) or (a and b);
+end b_fa;

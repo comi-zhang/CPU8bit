@@ -1,0 +1,32 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ir is
+    port(
+        mem_data:  in std_logic_vector(7 downto 0);  -- 存储器数据输入，8位
+        rec:       in std_logic_vector(1 downto 0);  -- 控制信号
+        clk,reset: in std_logic;                     -- 时钟和复位信号
+        q:         out std_logic_vector(7 downto 0)  -- 输出 IR 寄存器数据，8位
+    );
+end ir;
+
+architecture behave of ir is
+begin
+    process(clk, reset)
+    begin
+        if reset = '0' then
+            -- 如果复位信号为 '0'，则将输出置零
+            q <= (others => '0');
+        elsif rising_edge(clk) then
+            -- 在时钟上升沿检查控制信号
+            case rec is
+                when "10"=>
+                    -- 如果控制信号为 "10"，则将 IR 寄存器更新为存储器数据的低8位
+                    q <= mem_data;
+                when others=>
+                    -- 其他情况下保持不变
+                    null;
+            end case;
+        end if;
+    end process;
+end behave;
